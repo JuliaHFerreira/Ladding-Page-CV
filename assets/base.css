@@ -5,7 +5,7 @@
 :root {
   --dark: #1e1e1e;
   --light: #f4f4f4;
-  --accent: #6f59b6;
+  --accent: #41025e;
   --transition: 0.3s;
 }
 
@@ -28,7 +28,7 @@ nav {
   align-items: center;
   padding: 0.5rem 1rem;
   z-index: 1000;
-  overflow-x: hidden;
+  right: 0;
 }
 
 nav .logo {
@@ -82,16 +82,41 @@ header {
   justify-content: space-between;
   height: 100vh;
   padding: 1rem 2rem;
-  background: linear-gradient(135deg, var(--accent), #1a015c);
+  background: linear-gradient(135deg, var(--accent), #210139);
 }
 
-.header-content .destaque h1{
-  font-family: Georgia, 'Times New Roman', Times, serif;
-  color: #d00661;
+header a {
+  text-decoration: none;
+  color: var(--dark);
+  font-family:Verdana, Geneva, Tahoma, sans-serif;
+}
+
+header button{
+  background-color: rgb(217, 106, 175);
+  width: 9rem;
+  height: 3rem;
+  color: var(--light);
+  font-family:Verdana, Geneva, Tahoma, sans-serif;
+  border-radius: 30px;
+  border-style: none;
+}
+header .button2{
+  background-color: rgb(255, 255, 255);
+  border-color: rgb(217, 106, 175) 5px;
+}
+
+.header-content .destaque {
+  font-family: Geneva;
+  color: rgb(217, 106, 175);
+  font-size: 4.2rem;
+  margin: 0;
+  padding: 0;
+  line-height: 1.1;
+
 }
 
 .header-content h1 {
-  font-size: 3rem;
+  font-size: 1.8rem;
 }
 
 .header-content h4 {
@@ -119,7 +144,7 @@ section {
 section h2 {
   font-size: 2rem;
   margin-bottom: 1rem;
-  color: var(--accent);
+  color: rgb(217, 106, 175);
 }
 
 /* SOBRE */
@@ -201,7 +226,7 @@ footer {
 }
 
 .social-links a:hover {
-  color: var(--accent);
+  color: rgb(217, 106, 175);;
 }
 
 .copy {
@@ -217,7 +242,7 @@ footer {
 
   nav .nav-links {
     position: absolute;
-    top: 70px;
+    top: 60px;
     right: 0;
     background: var(--dark);
     flex-direction: column;
@@ -246,7 +271,7 @@ footer {
   header {
     flex-direction: column-reverse;
     text-align: center;
-    padding-top: 5rem;
+    padding-top: 5.7rem;
   }
 
   .header-image {
