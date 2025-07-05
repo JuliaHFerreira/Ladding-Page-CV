@@ -4,8 +4,8 @@
 
 :root {
   --dark: #1e1e1e;
-  --light: #f4f4f4;
-  --accent: #41025e;
+  --light: hsl(0, 0%, 96%);
+  --accent: #1f0144;
   --transition: 0.3s;
 }
 
@@ -22,7 +22,7 @@ body {
 nav {
   position: fixed;
   width: 100%;
-  background: rgba(214, 187, 235, 0.365); 
+  background: var(--accent); 
   display: flex;
   justify-content: space-around;
   align-items: center;
@@ -79,15 +79,15 @@ nav a:hover {
 header {
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  height: 100vh;
-  padding: 1rem 2rem;
+  justify-content: space-around;
+  height: 100%;
+  padding: 7rem 2rem;
   background: linear-gradient(135deg, var(--accent), #210139);
 }
 
 header a {
   text-decoration: none;
-  color: var(--dark);
+  color: var(--light);
   font-family:Verdana, Geneva, Tahoma, sans-serif;
 }
 
@@ -98,12 +98,13 @@ header button{
   color: var(--light);
   font-family:Verdana, Geneva, Tahoma, sans-serif;
   border-radius: 30px;
-  border-style: none;
+  border: 2px solid rgb(217, 106, 175);
+  margin: 3%;
 }
-header .button2{
-  background-color: rgb(255, 255, 255);
-  border-color: rgb(217, 106, 175) 5px;
+header .button2 {
+  background-color: var(--accent);
 }
+
 
 .header-content .destaque {
   font-family: Geneva;
@@ -113,6 +114,16 @@ header .button2{
   padding: 0;
   line-height: 1.1;
 
+}
+
+.header-content .destaque2 {
+  font-family: Geneva;
+  color: rgb(209, 191, 252);
+  font-size: 2.0rem;
+  margin: 0;
+  padding: 0;
+  line-height: 1.1;
+  margin-top: 0.5rem;
 }
 
 .header-content h1 {
@@ -125,7 +136,7 @@ header .button2{
 
 .tagline {
   margin-top: 0.5rem;
-  font-size: 1.2rem;
+  font-size: 1rem;
 }
 
 .header-image img {
@@ -139,6 +150,7 @@ main {
 
 section {
   margin-bottom: 4rem;
+  scroll-margin-top: 150px;
 }
 
 section h2 {
@@ -148,19 +160,37 @@ section h2 {
 }
 
 /* SOBRE */
+
 #sobre p {
-  max-width: 700px;
+  text-indent: 2em;
+  text-align: justify;
+}
+
+.bemVindo {
+  color: rgb(209, 191, 252);
+  font-size: 1.2rem; 
+  font-style: bold;
 }
 
 /* HABILIDADES */
 #habilidades {
   background: url('skills-bg.jpg') center/cover no-repeat;
-  padding: 4rem 2rem;
   border-radius: 8px;
 }
 
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+}
+
 .skill {
-  margin-bottom: 1rem;
+  text-align: center;
+}
+
+.skill .icon {
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
 }
 
 .skill span {
@@ -169,21 +199,45 @@ section h2 {
 }
 
 .bar {
-  width: 100%;
+  width: 80%;
+  height: 10px;
   background: rgba(255,255,255,0.1);
   border-radius: 5px;
   overflow: hidden;
+  margin: 0 auto 1rem;
+}
+
+.icon {
+  width: 90px;
 }
 
 .progress {
-  height: 10px;
+  height: 100%;
   width: 0;
-  transition: width 1s ease-out;
+  transition: width 3s ease-out;
 }
 
-.progress.html { background: #e44d26; }
-.progress.css  { background: #264de4; }
-.progress.js   { background: #f0db4f; }
+/* Cores específicas */
+.progress.html         { background: #e44d26; }
+.progress.css          { background: #264de4; }
+.progress.js           { background: #f0db4f; }
+.progress.photoshop    { background: #31a8ff; }
+.progress.java         { background: #007396; }
+.progress.Swagger      { background: #85ea2d; }
+.progress.Spring-boot  { background: #6db33f; }
+.progress.maven        { background: #c71a36; }
+.progress.JUnit        { background: #25a162; }
+.progress.Api-Rest     { background: #009688; } 
+.progress.C            { background: #00599c; }
+.progress.python       { background: #3776ab; } 
+.progress.sql          { background: #00758f; }
+.progress.Postgree-SQL { background: #336791; }
+.progress.Git          { background: #f05133; } 
+.progress.kanban       { background: #0052cc; } 
+.progress.Scrum        { background: #5e5ce6; } 
+.progress.advpl        { background: #934db7; } 
+.progress.totvs        { background: #ff6400; } 
+
 
 /* PROJETOS */
 #projetos article {
@@ -194,18 +248,43 @@ section h2 {
 }
 
 #projetos img {
-  width: 100%;
+  width: 50%;
   border-radius: 4px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#projetos h3 {
+  color: rgb(209, 191, 252);
 }
 
 /* EXTRAS */
 #extras {
   display: flex;
+  justify-content: center; /* Centraliza horizontalmente */
   gap: 2rem;
-  background: rgba(255,255,255,0.05);
+  background: rgba(255, 255, 255, 0.05);
   padding: 2rem;
   border-radius: 8px;
+  flex-wrap: wrap; /* Permite quebrar linha em telas menores */
+  text-align: left;
 }
+
+.extras-block {
+  min-width: 200px;
+}
+
+#extras h4 {
+  margin-bottom: 0.5rem;
+  font-size: 1.2rem;
+}
+
+#extras ul {
+  list-style-type: disc;
+  padding-left: 1.5rem;
+}
+
 
 .extras-block ul {
   list-style: disc inside;
@@ -271,7 +350,10 @@ footer {
   header {
     flex-direction: column-reverse;
     text-align: center;
-    padding-top: 5.7rem;
+    padding-top: 1.0rem;
+    padding-bottom: 10.0rem;
+    padding-right: 5rem;
+    padding-left: 5rem;
   }
 
   .header-image {
