@@ -271,6 +271,11 @@ section h2 {
   text-align: left;
 }
 
+#extras img {
+  width: 150px;
+  margin-right: 1rem;
+}
+
 .extras-block {
   min-width: 200px;
 }
