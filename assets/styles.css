@@ -787,6 +787,15 @@ section {
     display: inline-block;
 }
 
+.in-progress {
+    font-size: 14px;
+    color: var(--accent);
+    font-weight: 600;
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
 /* ========== FORMAÇÃO SECTION ========== */
 .formacao {
     background: var(--bg-secondary);
